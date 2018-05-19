@@ -3,9 +3,11 @@ package com.pl.myWebProject.Dao;
 import com.pl.myWebProject.domain.User;
 import com.pl.myWebProject.repository.UserRepository;
 
+import javax.ejb.Stateless;
 import java.math.BigInteger;
 import java.util.List;
 
+@Stateless
 public class UserRepositoryDaoBean implements UserRepositoryDao {
     @Override
     public void addUser(User user) {

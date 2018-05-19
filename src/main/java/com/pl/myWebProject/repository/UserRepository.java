@@ -58,7 +58,7 @@ public class UserRepository {
         user.setSurname("Barlecka");
         user.setAge(57);
         user.setGender(Gender.WOMAN);
-        user.setTelefon(new BigInteger("null"));
+        user.setTelefon(new BigInteger("000000000"));
         user.setMobile(new BigInteger("702702702"));
         user.setAddress("Kolobrzeska 20C, 80-600 Gdansk");
         userRepository.add(user);
