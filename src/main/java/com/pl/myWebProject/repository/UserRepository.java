@@ -9,7 +9,6 @@ import javax.persistence.PersistenceContext;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-
 @Stateless
 public class UserRepository {
 

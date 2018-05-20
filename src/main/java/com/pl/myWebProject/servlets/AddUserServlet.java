@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigInteger;
 
 @WebServlet("/add-user")
@@ -26,6 +27,8 @@ public class AddUserServlet extends HttpServlet {
 
     private void addUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        PrintWriter writer = resp.getWriter();
+
         User user = new User();
         user.setId(Integer.parseInt(req.getParameter("id")));
         user.setName(req.getParameter("name"));
@@ -35,6 +38,7 @@ public class AddUserServlet extends HttpServlet {
         user.setMobile(new BigInteger(req.getParameter("mobile")));
         user.setAddress(req.getParameter("address"));
         setUserGender(req, user);
+        writer.println("dodano");
     }
 
     protected void setUserGender(HttpServletRequest req, User user) {
