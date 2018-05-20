@@ -24,6 +24,8 @@ public class HelloServlet extends HttpServlet {
         PrintWriter writer = resp.getWriter();
         resp.setContentType("text/html;charset=UTF-8");
 
+
+
         writer.println("<!DOCTYPE html><html><body>");
 
         try {
