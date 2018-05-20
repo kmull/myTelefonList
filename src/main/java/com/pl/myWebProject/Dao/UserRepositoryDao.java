@@ -8,8 +8,8 @@ import java.util.List;
 
 @Local
 public interface UserRepositoryDao {
-    public void addUser(User user);
-    public User getUserById(int id);
-    public User getUserByTelefon(BigInteger mobile);
-    public List<User> getUserList();
+    public boolean addUser(User user);
+//    public User getUserById(int id);
+//    public User getUserByTelefon(BigInteger mobile);
+//    public List<User> getUserList();
 }

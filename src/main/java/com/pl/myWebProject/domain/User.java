@@ -1,15 +1,20 @@
 package com.pl.myWebProject.domain;
 
+import javax.persistence.*;
 import java.math.BigInteger;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, unique = true)
     private int id;
     private String name;
     private String surname;
     private int age;
     private Gender gender;
-    private BigInteger telefon;
+    private BigInteger telephone;
     private BigInteger mobile;
     private String address;
 
@@ -53,12 +58,12 @@ public class User {
         this.gender = gender;
     }
 
-    public BigInteger getTelefon() {
-        return telefon;
+    public BigInteger getTelephone() {
+        return telephone;
     }
 
-    public void setTelefon(BigInteger telefon) {
-        this.telefon = telefon;
+    public void setTelephone(BigInteger telephone) {
+        this.telephone = telephone;
     }
 
     public BigInteger getMobile() {

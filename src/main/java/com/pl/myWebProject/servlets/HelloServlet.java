@@ -26,20 +26,20 @@ public class HelloServlet extends HttpServlet {
 
 
 
-        writer.println("<!DOCTYPE html><html><body>");
-
-        try {
-            for (User user : dao.getUserList()) {
-                writer.println(user.getId() + ") Imie: " + user.getName() +
-                        "<BR/>Nazwisko: " + user.getSurname() +
-                        "<BR/> telefon: " + user.getMobile() + "<BR/><BR/>");
-            }
-        } catch (Exception e) {
-            writer.println("error");
-        }
-
-
-        writer.println("</body></html>");
+//        writer.println("<!DOCTYPE html><html><body>");
+//
+//        try {
+//            for (User user : dao.getUserList()) {
+//                writer.println(user.getId() + ") Imie: " + user.getName() +
+//                        "<BR/>Nazwisko: " + user.getSurname() +
+//                        "<BR/> telefon: " + user.getMobile() + "<BR/><BR/>");
+//            }
+//        } catch (Exception e) {
+//            writer.println("error");
+//        }
+//
+//
+//        writer.println("</body></html>");
     }
 
 }
