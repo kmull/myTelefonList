@@ -19,8 +19,8 @@ public class User {
     private int age;
     @Enumerated(EnumType.STRING)
     private Gender gender;
-    private String telephone;
-    private String mobile;
+    private long telephone;
+    private long mobile;
     private String address;
 
     public int getId() {
@@ -63,19 +63,19 @@ public class User {
         this.gender = gender;
     }
 
-    public String getTelephone() {
+    public long getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(String telephone) {
+    public void setTelephone(long telephone) {
         this.telephone = telephone;
     }
 
-    public String getMobile() {
+    public long getMobile() {
         return mobile;
     }
 
-    public void setMobile(String mobile) {
+    public void setMobile(long mobile) {
         this.mobile = mobile;
     }
 
