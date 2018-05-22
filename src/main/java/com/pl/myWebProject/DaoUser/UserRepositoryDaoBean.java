@@ -1,24 +1,27 @@
-package com.pl.myWebProject.Dao;
+package com.pl.myWebProject.DaoUser;
 
 import com.pl.myWebProject.domain.User;
 import com.pl.myWebProject.repository.UserRepository;
 
-import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import java.math.BigInteger;
 import java.util.List;
 
 @Stateless
 public class UserRepositoryDaoBean implements UserRepositoryDao {
 
     @Inject
-    UserRepository userRepository;
+    protected UserRepository userRepository;
 
     @Override
     public boolean addUser(User user) {
         userRepository.addUser(user);
         return true;
+    }
+
+    @Override
+    public List<User> getUserList() {
+        return userRepository.userList();
     }
 
 

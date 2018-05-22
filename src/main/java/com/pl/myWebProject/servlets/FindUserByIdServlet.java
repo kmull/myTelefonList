@@ -1,7 +1,6 @@
 package com.pl.myWebProject.servlets;
 
-import com.pl.myWebProject.Dao.UserRepositoryDao;
-import com.pl.myWebProject.domain.User;
+import com.pl.myWebProject.DaoUser.UserRepositoryDao;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet("find-user-by-id")
 public class FindUserByIdServlet extends HttpServlet {

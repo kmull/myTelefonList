@@ -1,8 +1,10 @@
 package com.pl.myWebProject.servlets;
 
+import com.pl.myWebProject.DaoUser.UserRepositoryDao;
 import com.pl.myWebProject.domain.Gender;
 import com.pl.myWebProject.domain.User;
 
+import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,9 @@ import java.math.BigInteger;
 
 @WebServlet("/add-user")
 public class AddUserServlet extends HttpServlet {
+
+    @Inject
+    UserRepositoryDao dao;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,18 +32,31 @@ public class AddUserServlet extends HttpServlet {
 
     private void addUser(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        resp.setContentType("text/html;charset=UTF-8");
         PrintWriter writer = resp.getWriter();
 
         User user = new User();
-        user.setId(Integer.parseInt(req.getParameter("id")));
+//        user.setId(Integer.parseInt(req.getParameter("id")));
         user.setName(req.getParameter("name"));
         user.setSurname(req.getParameter("surname"));
         user.setAge(Integer.parseInt(req.getParameter("age")));
-        user.setTelephone(new BigInteger(req.getParameter("telephone")));
-        user.setMobile(new BigInteger(req.getParameter("mobile")));
+        user.setTelephone(req.getParameter("telephone"));
+        user.setMobile(req.getParameter("mobile"));
         user.setAddress(req.getParameter("address"));
         setUserGender(req, user);
+
+        writer.println(user.getId() + "\n" +
+                user.getName() + "<BR/>" +
+                user.getSurname());
+
+        dao.addUser(user);
         writer.println("dodano");
+
+        req.setAttribute("okMessage", "User " + user.getName() + " has been added");
+
+        writer.println(user.getName());
+//        RequestDispatcher requestDispatcher = req.getRequestDispatcher("/index.jsp");
+//        requestDispatcher.forward(req, resp);
     }
 
     protected void setUserGender(HttpServletRequest req, User user) {

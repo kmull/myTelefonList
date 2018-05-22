@@ -8,6 +8,7 @@
 <br/>
 
 <a href="/find-user-by-id">find user by id</a>
+<br/><br/>
 <a href="addUser.jsp">add user</a>
 
 

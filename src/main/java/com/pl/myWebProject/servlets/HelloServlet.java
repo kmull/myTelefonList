@@ -1,8 +1,6 @@
 package com.pl.myWebProject.servlets;
 
-import com.pl.myWebProject.Dao.UserRepositoryDao;
-import com.pl.myWebProject.domain.User;
-import com.pl.myWebProject.repository.UserRepository;
+import com.pl.myWebProject.DaoUser.UserRepositoryDao;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;

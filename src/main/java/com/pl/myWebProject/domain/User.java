@@ -1,21 +1,26 @@
 package com.pl.myWebProject.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.math.BigInteger;
 
 @Entity
+@NamedQuery(name = "getUserList", query = "from User")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false, unique = true)
     private int id;
+
     private String name;
     private String surname;
     private int age;
+    @Enumerated(EnumType.STRING)
     private Gender gender;
-    private BigInteger telephone;
-    private BigInteger mobile;
+    private String telephone;
+    private String mobile;
     private String address;
 
     public int getId() {
@@ -50,27 +55,27 @@ public class User {
         this.age = age;
     }
 
-    public Gender getGender() {
-        return gender;
+    public String getGender() {
+        return String.valueOf(gender);
     }
 
     public void setGender(Gender gender) {
         this.gender = gender;
     }
 
-    public BigInteger getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(BigInteger telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
-    public BigInteger getMobile() {
+    public String getMobile() {
         return mobile;
     }
 
-    public void setMobile(BigInteger mobile) {
+    public void setMobile(String mobile) {
         this.mobile = mobile;
     }
 

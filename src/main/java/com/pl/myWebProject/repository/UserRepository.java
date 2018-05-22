@@ -14,12 +14,16 @@ public class UserRepository {
 
 
     @PersistenceContext(unitName = "pUnit")
-    private EntityManager entityManager;
+    protected EntityManager entityManager;
 
     public boolean addUser(User user) {
         entityManager.persist(user);
-        System.out.println("User " + user + " added");
+        System.out.println("User " + user.getName() + " added");
         return true;
+    }
+
+    public List<User> userList(){
+        return entityManager.createNamedQuery("getUserList").getResultList();
     }
 
 
