@@ -18,8 +18,8 @@
         <ul class="nav navbar-nav">
             <li class="active"><a href="index.jsp">Home</a></li>
             <li><a href="addUser.jsp">Add phone</a></li>
-            <li><a href="index.jsp">Menu</a></li>
-            <li><a href="readUsers.jsp">Show users</a></li>
+            <%--<li><a href="index.jsp">Menu</a></li>--%>
+            <li><a href="/read-user">Show users</a></li>
         </ul>
     </div>
 </nav>
